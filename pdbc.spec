@@ -27,19 +27,23 @@ Kompilator/dekompilator pdb.
 %setup -q
 
 %build
-cd src
-%{__make} CC="%{__cc} %{rpmcflags}"
+%{__make} -C src \
+	CC="%{__cc} %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man{1,4}}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+install src/pdbc.exe $RPM_BUILD_ROOT%{_bindir}/pdbc
+install src/pdbdec.exe $RPM_BUILD_ROOT%{_bindir}/pdbdec
+install man/man1/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install man/man4/*.4 $RPM_BUILD_ROOT%{_mandir}/man4
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README
+%doc README.txt html/*
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}
+%{_mandir}/man?/*
