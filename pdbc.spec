@@ -15,6 +15,7 @@ Vendor:		Eric Obermuhlner
 # renamed from http://www.palmgear.com/software/redirector.cfm/pdbc_0.9.4.zip?prodID=29490&type=zip
 Source0:	%{name}_%{version}.zip
 URL:		http://www.obermuhlner.com/public/Projects/Palm/PDBC/
+BuildRequires:	unzip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
