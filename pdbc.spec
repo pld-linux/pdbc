@@ -8,12 +8,11 @@ Summary:	pdb compiler/decompiler
 Summary(pl):	Kompilator/dekompilator pdb
 Name:		pdbc
 Version:	0.9.4
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Development/Building
 Vendor:		Eric Obermuhlner
 # renamed from http://www.palmgear.com/software/redirector.cfm/pdbc_0.9.4.zip?prodID=29490&type=zip
-
 Source0:	%{name}_%{version}.zip
 URL:		http://www.obermuhlner.com/public/Projects/Palm/PDBC/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,11 +28,10 @@ Kompilator/dekompilator pdb.
 
 %build
 cd src
-%{__make}
+%{__make} CC="%{__cc} %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
