@@ -5,7 +5,7 @@
 # wiser fixes this
 
 Summary:	pdb compiler/decompiler
-Summary(pl):	Kompilator/dekompilator pdb
+Summary(pl.UTF-8):   Kompilator/dekompilator pdb
 Name:		pdbc
 Version:	0.9.4
 Release:	1
@@ -21,7 +21,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 pdb compiler/decompiler.
 
-%description -l pl
+%description -l pl.UTF-8
 Kompilator/dekompilator pdb.
 
 %prep
