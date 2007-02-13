@@ -5,7 +5,7 @@
 # wiser fixes this
 
 Summary:	pdb compiler/decompiler
-Summary(pl.UTF-8):   Kompilator/dekompilator pdb
+Summary(pl.UTF-8):	Kompilator/dekompilator pdb
 Name:		pdbc
 Version:	0.9.4
 Release:	1
